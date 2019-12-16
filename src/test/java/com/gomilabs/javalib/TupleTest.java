@@ -1,6 +1,5 @@
 package com.gomilabs.javalib;
 
-import com.gomilabs.javalib.Tuple;
 import org.junit.Test;
 import java.util.function.Function;
 
@@ -28,6 +27,18 @@ public class TupleTest {
     @Test
     public void testSwap() {
         assertThat(swap(Tuple.tuple(0d, "string")), is(Tuple.tuple("string", 0d)));
+    }
+
+    @Test
+    public void testFst() {
+        Tuple t = Tuple.tuple("string", 0d);
+        assertThat(t.fst(), is("string"));
+    }
+
+    @Test
+    public void testSnd() {
+        Tuple t = Tuple.tuple("string", 0d);
+        assertThat(t.snd(), is(0d));
     }
 
 }
